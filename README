@@ -1,0 +1,12 @@
+For the nagios server, run:
+
+docker build docker/nagios --rm -t couchbase/nagios
+docker run --name nagios --rm -v $(pwd)/etc:/opt/nagios/etc/ -p 0.0.0.0:8080:80 -p 0.0.0.0:5668:5668 -it couchbase/nagios
+
+For nagios client, run:
+
+docker build docker/client --rm -t couchbase/nrpe
+docker run --name nrpe --rm -p 5666:5666 --net=host 
+	-e COUCHBASE_HOST=<ip address or hostname of the couchbase node to monitor> \
+	-e NAGIOS_HOST=<ip address or hostname of the nagios container> \
+	-it couchbase/nrpe

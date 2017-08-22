@@ -27,12 +27,12 @@ chmod a+x /usr/lib64/nagios/plugins/check_open_fds
 curl -o /usr/lib64/nagios/plugins/check_cpu_perf.sh https://raw.githubusercontent.com/skywalka/check-cpu-perf/master/check_cpu_perf.sh
 chmod a+x /usr/lib64/nagios/plugins/check_cpu_perf.sh
 
-systemctl enable nrpe.service
-systemctl start  nrpe.service
-
 curl -o /usr/lib64/nagios/plugins/check_couchbase.py https://raw.githubusercontent.com/deanproctor/nagios-plugin-couchbase/master/check_couchbase.py
 chmod a+x /usr/lib64/nagios/plugins/check_couchbase.py
 
 curl -o /etc/nagios/check_couchbase.yaml https://raw.githubusercontent.com/deanproctor/nagios-plugin-couchbase/master/check_couchbase.yaml
 
 curl -o /etc/nrpe.d/couchbase.cfg https://raw.githubusercontent.com/deanproctor/couchbase-nagios-reference/master/client/nrpe_couchbase.cfg
+
+systemctl enable nrpe.service
+systemctl start  nrpe.service

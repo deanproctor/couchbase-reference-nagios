@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yum install -y epel-release
-yum install -y nrpe nagios-plugins-load nagios-plugins-swap nagios-plugins-disk nagios-plugins-procs nagios-plugins-ntp sysstat bc
+yum install -y nrpe nagios-plugins-load nagios-plugins-swap nagios-plugins-disk nagios-plugins-procs nagios-plugins-ntp sysstat bc PyYAML
 yum install -y yum install -y http://www.nsca-ng.org/download/redhat/nsca-ng-client-1.4-1.el6.x86_64.rpm
 
 echo "allowed_hosts=192.168.0.0/16" >> /etc/nagios/nrpe.cfg

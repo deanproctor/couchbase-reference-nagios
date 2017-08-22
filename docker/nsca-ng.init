@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /opt/nagios/sbin/nsca-ng -F -c /opt/nagios/etc/nsca-ng.cfg

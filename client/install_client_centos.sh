@@ -34,3 +34,5 @@ curl -o /usr/lib64/nagios/plugins/check_couchbase.py https://raw.githubuserconte
 chmod a+x /usr/lib64/nagios/plugins/check_couchbase.py
 
 curl -o /etc/nagios/check_couchbase.yaml https://raw.githubusercontent.com/deanproctor/nagios-plugin-couchbase/master/check_couchbase.yaml
+
+curl -o /etc/nrpe.d/couchbase.cfg https://raw.githubusercontent.com/deanproctor/couchbase-nagios-reference/master/client/nrpe_couchbase.cfg

@@ -18,7 +18,6 @@ RUN cd /tmp						&&	\
 	make install					&&	\
 	cp /opt/nagios/etc/nsca-ng.cfg /orig/etc/			
 
-
 ADD nsca-ng.init /etc/sv/nsca-ng/run
 ADD radar.init /etc/sv/radar/run
 

@@ -3,7 +3,8 @@ FROM centos:latest
 ENV NAGIOS_CONF_DIR=/etc/nagios
 ENV NAGIOS_PLUGINS_DIR=/usr/lib64/nagios/plugins
 
-RUN yum install -y epel-release && \
+RUN yum update && \ 
+    yum install -y epel-release && \
     yum install -y curl nrpe nagios-plugins-load nagios-plugins-swap nagios-plugins-disk nagios-plugins-procs nagios-plugins-ntp sysstat bc PyYAML python-requests  && \
     yum install -y http://www.nsca-ng.org/download/redhat/nsca-ng-client-1.4-1.el6.x86_64.rpm
 

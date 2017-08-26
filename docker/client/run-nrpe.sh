@@ -11,8 +11,7 @@ if [ ! "$PID" ]; then
   # exit 1
 fi
 while [ -d /proc/$PID ] && [ -z `grep zombie /proc/$PID/status` ]; do
-    echo "Collecting Couchbase stats..."
-    $NAGIOS_PLUGINS_DIR/check_couchbase.py -v -c $NAGIOS_CONF_DIR/check_couchbase.yaml
+    echo "Still running..."
     sleep 60s
 done
 echo "NRPE daemon exited. Quitting.."

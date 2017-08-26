@@ -10,8 +10,7 @@ if [ ! "$PID" ]; then
   echo "Error: Unable to start nrpe daemon..."
   # exit 1
 fi
-while [ -d /proc/$PID ] && [ -z `grep zombie /proc/$PID/status` ]; do
-    echo "Still running..."
-    sleep 60s
-done
+
+tail -f /var/log/nrpe.log
+
 echo "NRPE daemon exited. Quitting.."

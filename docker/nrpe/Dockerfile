@@ -19,7 +19,8 @@ ADD run-nrpe.sh /usr/sbin/run-nrpe.sh
 
 RUN chmod +x -R $NAGIOS_PLUGINS_DIR   && \
     chmod +x /usr/local/bin/dumb-init && \
-    chmod +x /usr/sbin/run-nrpe.sh			
+    chmod +x /usr/sbin/run-nrpe.sh    && \
+    chmod 644 /etc/send_nsca.cfg		
 
 EXPOSE 5666
 

@@ -1,9 +1,9 @@
 # Couchbase monitoring reference implementation
-This project provides a reference implementation for monitoring Couchbase with Nagios.
+This project provides a reference implementation for monitoring [Couchbase](https://www.couchbase.com) with [Nagios](https://www.nagios.org/).
 
 Two Docker images are provided: 
 * couchbase/nagios: the Nagios server with preconfigured Couchbase host and service templates
-* couchbase/nrpe: the Nagios Remote Plugin Execution (NRPE) server with check_couchbase and plugins to monitor the OS
+* couchbase/nrpe: the Nagios Remote Plugin Execution (NRPE) server with [check_couchbase](https://github.com/deanproctor/nagios-plugin-couchbase) and plugins to monitor the OS
 
 ## Building the images
 
@@ -38,9 +38,9 @@ The default login credentials are: nagiosadmin:nagios
 The repository contains a top level "etc" directory which houses all of the Nagios config files.  The container mounts this directory, allowing the administrator to change Nagios config without rebuilding the image.  The container is configured to reload Nagios every 30 seconds to pick up new configuration.
 
 The Nagios container runs 3 key services:
-* nagios: schedules and executes active checks
-* nsca-ng: receives passive checks from the check_couchbase script and passes them to Nagios
-* radar: scans the Nagios log for unknown host and service errors and dynamically creates host and service entries for them
+* [nagios](https://www.nagios.org/): schedules and executes active checks
+* [nsca-ng](http://www.nsca-ng.org/): receives passive checks from the check_couchbase script and passes them to Nagios
+* [radar](https://exchange.nagios.org/directory/Addons/Passive-Checks/Radar--2D-add-hosts-and-services-automatically/details): scans the Nagios log for unknown host and service errors and dynamically creates host and service entries for them
 
 ### Config layout
 * etc: contains the main Nagios and NSCA configuration files

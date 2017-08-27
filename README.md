@@ -1,4 +1,4 @@
-# Couchbase Nagios reference implementation
+# Couchbase monitoring reference implementation
 This project provides a reference implementation for monitoring Couchbase with Nagios.
 
 Two Docker images are provided: 

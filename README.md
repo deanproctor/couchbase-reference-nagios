@@ -1,9 +1,31 @@
-For the nagios server, run:
+# Couchbase Nagios Reference Implementation
+This project provides a reference implementation for monitoring Couchbase with Nagios.
+
+Two Docker images are provided: 
+* couchbase/nagios: the Nagios server with preconfigured Couchbase host and service templates
+* couchbase/nrpe: the Nagios Remote Plugin Execution (NRPE) server with check_couchbase and plugins to monitor the OS
+
+The Nagios container should reside on your monitoring server.
+
+The NRPE container runs on the Couchbase servers.
+
+## Building the images
+
+To build the Nagios server:
 
 docker build docker/nagios -t couchbase/nagios
-docker run --name nagios -v $(pwd)/etc:/opt/nagios/etc/ -p 8080:80 -p 5668:5668 -it couchbase/nagios
 
-For the nrpe client, run:
+
+To build tne NRPE server:
 
 docker build docker/nrpe -t couchbase/nrpe
+
+## Running the containers
+To run the Nagios container:
+
+docker run --name nagios -v $(pwd)/etc:/opt/nagios/etc/ -p 8080:80 -p 5668:5668 -it couchbase/nagios
+
+
+To run the NRPE container:
+
 docker run --name nrpe -v /:/mnt/ROOT -p 5666:5666 --net=host -it couchbase/nrpe

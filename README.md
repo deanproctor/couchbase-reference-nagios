@@ -1,3 +1,5 @@
+**This repo has moved to https://github.com/couchbaselabs/couchbase-reference-nagios**
+
 # Couchbase monitoring reference implementation
 This project provides a reference implementation for monitoring [Couchbase](https://www.couchbase.com) with [Nagios](https://www.nagios.org/).
 
